@@ -5,6 +5,7 @@ const {
     withOpacityValue,
 } = require("@left4code/tw-starter/dist/js/tailwind-config-helper");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     mode: "jit",
     content: [
