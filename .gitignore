@@ -16,5 +16,5 @@ yarn-error.log
 /.vscode
 .idea/inspectionProfiles/
 .idea/sonarlint/
-composer.lock
 package.json
+*.lock
