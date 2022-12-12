@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
         Route::get('wizard-layout-1-page', 'wizardLayout1')->name('wizard-layout-1');
         Route::get('wizard-layout-2-page', 'wizardLayout2')->name('wizard-layout-2');
         Route::get('wizard-layout-3-page', 'wizardLayout3')->name('wizard-layout-3');
-        Route::get('blog-layout-1-page', 'blogLayout1')->name('blog-layout-1');
+        Route::get('blog-layout-1-page', 'blogLayout1')->name('blog-layout-1')->middleware(['password.confirm']);
         Route::get('blog-layout-2-page', 'blogLayout2')->name('blog-layout-2');
         Route::get('blog-layout-3-page', 'blogLayout3')->name('blog-layout-3');
         Route::get('pricing-layout-1-page', 'pricingLayout1')->name('pricing-layout-1');
