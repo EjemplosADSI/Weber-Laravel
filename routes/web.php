@@ -27,7 +27,7 @@ Route::get('/terms_user', function () {
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 Route::get('color-scheme-switcher/{color_scheme}', [ColorSchemeController::class, 'switch'])->name('color-scheme-switcher');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     //Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::controller(PageController::class)->group(function () {
         Route::get('/home', 'dashboardOverview1')->name('dashboard-overview-1');
@@ -103,7 +103,7 @@ Route::middleware('auth')->group(function () {
         Route::get('chart-page', 'chart')->name('chart');
         Route::get('slider-page', 'slider')->name('slider');
         Route::get('image-zoom-page', 'imageZoom')->name('image-zoom');
-    })->middleware('verified');
+    });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
