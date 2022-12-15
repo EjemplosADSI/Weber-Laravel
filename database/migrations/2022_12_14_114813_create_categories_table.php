@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\CategoryStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,11 +15,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->comment('');
-            $table->increments('id');
-            $table->string('name', 80);
-            $table->text('description');
-            $table->enum('status', ['Activo', 'Ínactivo']);
+            $table->comment('Tabla de categorias');
+            $table->bigIncrements('id')->unique('id_category_UNIQUE');
+            $table->string('name', 80)->unique()->index();
+            $table->text('description')->nullable()->fulltext();
+            $table->enum('status', CategoryStatus::values())->default(CategoryStatus::Activo->value);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

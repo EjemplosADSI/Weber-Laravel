@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\DepartamentRegion;
+use App\Enums\DepartamentStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,12 +15,11 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->comment('');
-            $table->bigIncrements('id');
-            $table->string('name', 90)->unique('departamentos_nombre_unique');
-            $table->enum('region', DepartamentRegion::cases());
-            $table->enum('status', ['Activo', 'Inactivo'])->default('Activo');
-            $table->primary(['id']);
+            $table->comment('Tabla de Departamentos');
+            $table->bigIncrements('id')->unique('id_departament_UNIQUE');
+            $table->string('name', 90)->unique('name_departament_UNIQUE')->index();
+            $table->enum('region', DepartamentRegion::values());
+            $table->enum('status', DepartamentStatus::values())->default(DepartamentStatus::Activo->value);
             $table->timestamps();
             $table->softDeletes();
         });

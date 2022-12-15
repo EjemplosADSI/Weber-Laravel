@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('menus', function (Blueprint $table) {
-            $table->comment('');
-            $table->bigIncrements('id');
-            $table->unsignedInteger('parent_id')->nullable();
+            $table->comment('Tabla del menu de la aplicacion');
+            $table->bigIncrements('id')->unique('id_menu_UNIQUE');
+            $table->unsignedBigInteger('parent_id')->nullable()->unique('parent_menu_UNIQUE')->index();
             $table->string('title', 150);
-            $table->string('description', 45)->nullable();
+            $table->text('description')->nullable()->fulltext();
             $table->string('model', 60)->nullable();
             $table->string('route', 150)->nullable();
-            $table->unsignedSmallInteger('order');
-            $table->string('icon', 45)->nullable();
+            $table->unsignedInteger('order');
+            $table->string('icon', 80)->nullable()->default('');
             $table->tinyInteger('enabled');
         });
     }

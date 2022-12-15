@@ -14,12 +14,11 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('business', function (Blueprint $table) {
-            $table->comment('');
-            $table->bigIncrements('id')->unique('idempresa_UNIQUE');
+            $table->comment('Tabla empresas');
+            $table->bigIncrements('id')->unique('id_bussiness_UNIQUE');
             $table->string('name', 80)->index();
-            $table->unsignedInteger('nit')->unique('nit_UNIQUE');
-            $table->enum('status', BusineStatus::cases())->default(BusineStatus::Activo);
-            $table->primary(['id']);
+            $table->unsignedInteger('nit')->unique('nit_bussiness_UNIQUE');
+            $table->enum('status', BusineStatus::values())->default(BusineStatus::Activo->value);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -14,12 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sales_invoices', function (Blueprint $table) {
-            $table->comment('');
-            $table->increments('id');
-            $table->unsignedInteger('amout');
-            $table->double('price')->unsigned();
-            $table->unsignedInteger('invoice_id')->index('fk_detalle_compra_factura1_idx');
-            $table->unsignedInteger('purchase_invoice_id')->index('fk_detalle_compra_detalle_factura1_idx');
+            $table->comment('Tabla de facturas de venta');
+            $table->bigIncrements('id')->unique('id_sales_invoice_UNIQUE');
+            $table->decimal('amount', 12, 2);
+            $table->decimal('price', 12, 2);
+            $table->unsignedBigInteger('invoice_id')->index('fk_detalle_compra_factura1_idx');
+            $table->unsignedBigInteger('purchase_invoice_id')->index('fk_detalle_compra_detalle_factura1_idx');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

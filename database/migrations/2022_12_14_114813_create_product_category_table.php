@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('product_category', function (Blueprint $table) {
-            $table->comment('');
-            $table->unsignedInteger('product_id')->index('fk_productos_has_categorias_productos1_idx');
-            $table->unsignedInteger('category_id')->index('fk_productos_has_categorias_categorias1_idx');
+            $table->comment('Tabla de productos que pertenecen a una categoria');
+            $table->unsignedBigInteger('product_id')->index('fk_productos_has_categorias_productos1_idx');
+            $table->unsignedBigInteger('category_id')->index('fk_productos_has_categorias_categorias1_idx');
         });
     }
 

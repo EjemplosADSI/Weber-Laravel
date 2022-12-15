@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\ProductStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,13 +15,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->comment('');
-            $table->increments('id');
-            $table->string('name', 60);
-            $table->decimal('price', 10, 0);
-            $table->float('gain_percentage', 10, 0)->unsigned();
+            $table->comment('Tabla de productos');
+            $table->bigIncrements('id')->unique('id_product_UNIQUE');
+            $table->string('name', 60)->unique()->index();
+            $table->unsignedDecimal('price', 10, 0);
+            $table->unsignedFloat('gain_percentage', 10, 2);
             $table->unsignedMediumInteger('stock');
-            $table->enum('status', ['Activo', 'Inactivo']);
+            $table->enum('status', ProductStatus::values())->default(ProductStatus::Activo->value);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

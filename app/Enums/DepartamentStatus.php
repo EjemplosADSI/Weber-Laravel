@@ -1,9 +1,11 @@
 <?php
 
+
 namespace App\Enums;
+
 use App\Traits\ValuesEnum;
 
-enum BusineStatus: string
+enum DepartamentStatus: string
 {
     use ValuesEnum;
 

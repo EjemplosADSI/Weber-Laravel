@@ -1,11 +1,12 @@
 <?php
 
+use App\Enums\InvoiceStatus;
+use App\Enums\InvoiceType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,15 +15,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->comment('');
-            $table->increments('id');
-            $table->string('number', 244);
-            $table->unsignedInteger('user_id')->index('fk_ventas_Usuarios1_idx')->comment('Puede ser cliente en caso de venta o proveedor en caso de compra');
-            $table->unsignedInteger('employee_id')->index('fk_ventas_Usuarios2_idx');
-            $table->dateTime('date');
-            $table->double('amout');
-            $table->enum('type', ['Venta', 'Compra']);
-            $table->enum('status', ['En progreso', 'Cancelada', 'Finalizada']);
+            $table->comment('Tabla de facturas');
+            $table->bigIncrements('id')->unique('id_invoice_UNIQUE');
+            $table->string('number', 244)->unique()->index();
+            $table->unsignedBigInteger('user_id')->index()->comment('Puede ser cliente en caso de venta o proveedor en caso de compra');
+            $table->unsignedBigInteger('employee_id')->index();
+            $table->timestamp('date')->useCurrent()->useCurrentOnUpdate();
+            $table->decimal('amount', 12, 2);
+            $table->enum('type', InvoiceType::values())->default(InvoiceType::Venta->value);
+            $table->enum('status', InvoiceStatus::values())->default(InvoiceStatus::Progreso->value);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

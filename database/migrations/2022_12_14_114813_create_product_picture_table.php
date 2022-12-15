@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\ProductPictureStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,11 +15,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('product_picture', function (Blueprint $table) {
-            $table->comment('');
-            $table->increments('id');
-            $table->unsignedInteger('picture_id')->index('fk_productos_has_fotos_fotos1_idx');
-            $table->unsignedInteger('product_id')->index('fk_productos_has_fotos_productos1_idx');
-            $table->enum('status', ['Activo', 'Inactivo']);
+            $table->comment('Tabla de imagenes de productos');
+            $table->bigIncrements('id')->unique('id_product_picture_UNIQUE');
+            $table->unsignedBigInteger('picture_id')->index('fk_productos_has_fotos_fotos1_idx');
+            $table->unsignedBigInteger('product_id')->index('fk_productos_has_fotos_productos1_idx');
+            $table->enum('status', ProductPictureStatus::values())->default(ProductPictureStatus::Activo->value);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

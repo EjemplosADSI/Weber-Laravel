@@ -14,13 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('returns', function (Blueprint $table) {
-            $table->comment('');
-            $table->integer('id')->primary();
-            $table->date('date');
-            $table->text('observations');
-            $table->unsignedInteger('employee_id')->index('fk_devoluciones_usuarios1_idx');
-            $table->double('amount');
-            $table->unsignedInteger('detail_purchase_id')->index('fk_devoluciones_detalle_compra1_idx');
+            $table->comment('Tabla de devoluciones');
+            $table->bigIncrements('id')->unique('id_return_UNIQUE');
+            $table->timestamp('date')->useCurrent()->useCurrentOnUpdate();
+            $table->text('description')->fulltext();
+            $table->unsignedBigInteger('employee_id')->index('fk_devoluciones_usuarios1_idx');
+            $table->unsignedDecimal('amount', 12, 2);
+            $table->unsignedBigInteger('detail_purchase_id')->index('fk_devoluciones_detalle_compra1_idx');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
