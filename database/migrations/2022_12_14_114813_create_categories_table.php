@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name', 80)->unique()->index();
             $table->text('description')->nullable()->fulltext();
             $table->enum('status', CategoryStatus::values())->default(CategoryStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('department_id')->index('municipios_departamento_id_index');
             $table->string('shortened', 40)->nullable();
             $table->enum('status', TownStatus::values())->default(TownStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

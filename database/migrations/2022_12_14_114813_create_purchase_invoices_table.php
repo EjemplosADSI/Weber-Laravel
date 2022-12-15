@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('expiration_date')->nullable();
             $table->unsignedDecimal('amount', 12, 2);
             $table->unsignedDecimal('price', 12, 2);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 60)->unique();
             $table->text('description')->nullable()->fulltext();
             $table->string('route', 120)->unique('route_picture_UNIQUE');
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

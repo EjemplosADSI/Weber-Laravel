@@ -25,7 +25,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('phone')->nullable();
             $table->enum('type', SubsidiaryType::values())->default(SubsidiaryType::Principal->value);
             $table->enum('status', SubsidiaryStatus::values())->default(SubsidiaryStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

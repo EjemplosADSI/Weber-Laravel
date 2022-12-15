@@ -20,11 +20,11 @@ return new class extends Migration {
             $table->string('number', 244)->unique()->index();
             $table->unsignedBigInteger('user_id')->index()->comment('Puede ser cliente en caso de venta o proveedor en caso de compra');
             $table->unsignedBigInteger('employee_id')->index();
-            $table->timestamp('date')->useCurrent()->useCurrentOnUpdate();
+            $table->timestampTz('date')->useCurrent()->useCurrentOnUpdate();
             $table->decimal('amount', 12, 2);
             $table->enum('type', InvoiceType::values())->default(InvoiceType::Venta->value);
             $table->enum('status', InvoiceStatus::values())->default(InvoiceStatus::Progreso->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

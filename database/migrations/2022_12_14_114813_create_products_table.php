@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedFloat('gain_percentage', 10, 2);
             $table->unsignedMediumInteger('stock');
             $table->enum('status', ProductStatus::values())->default(ProductStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('picture_id')->index('fk_productos_has_fotos_fotos1_idx');
             $table->unsignedBigInteger('product_id')->index('fk_productos_has_fotos_productos1_idx');
             $table->enum('status', ProductPictureStatus::values())->default(ProductPictureStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

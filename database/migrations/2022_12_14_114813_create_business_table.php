@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string('name', 80)->index();
             $table->unsignedInteger('nit')->unique('nit_bussiness_UNIQUE');
             $table->enum('status', BusineStatus::values())->default(BusineStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

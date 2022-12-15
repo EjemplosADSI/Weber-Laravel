@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('name', 90)->unique('name_departament_UNIQUE')->index();
             $table->enum('region', DepartamentRegion::values());
             $table->enum('status', DepartamentStatus::values())->default(DepartamentStatus::Activo->value);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

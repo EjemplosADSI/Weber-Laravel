@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->string('name', 60)->index();
             $table->string('last_name', 60)->index();
             $table->string('email', 90)->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestampTz('email_verified_at')->nullable();
             $table->string('password', 256)->nullable();
             $table->string('photo', 45)->nullable()->default('default_user.jpg');
             $table->enum('gender', UserGender::values())->nullable()->default(UserGender::MASCULINO->value);
@@ -37,7 +37,7 @@ return new class extends Migration {
             $table->enum('status', UserStatus::values())->default(UserStatus::Activo->value);
             $table->softDeletes();
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestampsTz();
 
         });
     }

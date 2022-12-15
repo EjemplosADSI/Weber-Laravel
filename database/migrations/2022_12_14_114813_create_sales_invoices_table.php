@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('price', 12, 2);
             $table->unsignedBigInteger('invoice_id')->index('fk_detalle_compra_factura1_idx');
             $table->unsignedBigInteger('purchase_invoice_id')->index('fk_detalle_compra_detalle_factura1_idx');
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }

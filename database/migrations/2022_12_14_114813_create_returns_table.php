@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('returns', function (Blueprint $table) {
             $table->comment('Tabla de devoluciones');
             $table->bigIncrements('id')->unique('id_return_UNIQUE');
-            $table->timestamp('date')->useCurrent()->useCurrentOnUpdate();
+            $table->timestampTz('date')->useCurrent()->useCurrentOnUpdate();
             $table->text('description')->fulltext();
             $table->unsignedBigInteger('employee_id')->index('fk_devoluciones_usuarios1_idx');
             $table->unsignedDecimal('amount', 12, 2);
             $table->unsignedBigInteger('detail_purchase_id')->index('fk_devoluciones_detalle_compra1_idx');
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }
