@@ -14,10 +14,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('subsidiary', function (Blueprint $table) {
+        Schema::create('subsidiaries', function (Blueprint $table) {
             $table->comment('Tabla de sucursales');
             $table->bigIncrements('id')->unique('id_UNIQUE');
-            $table->unsignedBigInteger('busine_id')->index('fk_sucursal_empresa1_idx');
+            $table->unsignedBigInteger('business_id')->index('fk_sucursal_empresa1_idx');
             $table->string('name', 80)->unique();
             $table->unsignedBigInteger('administrator_id')->index('fk_sucursal_usuarios1_idx');
             $table->string('direction', 80)->unique();
@@ -37,6 +37,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('subsidiary');
+        Schema::dropIfExists('subsidiaries');
     }
 };

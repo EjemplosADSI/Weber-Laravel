@@ -33,7 +33,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('town_id')->index('fk_usuarios_municipios1_idx');
             $table->date('birth_date')->nullable();
             $table->enum('role', UserRole::values())->default(UserRole::Cliente->value);
-            $table->unsignedBigInteger('subsidiary_id')->index('fk_usuarios_sucursal1_idx');
+            $table->unsignedBigInteger('subsidiary_id')->nullable()->index('fk_usuarios_sucursal1_idx');
             $table->enum('status', UserStatus::values())->default(UserStatus::Activo->value);
             $table->softDeletes();
             $table->rememberToken();

@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('subsidiary', function (Blueprint $table) {
-            $table->foreign(['busine_id'], 'fk_sucursal_empresa1')->references(['id'])->on('business')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+        Schema::table('subsidiaries', function (Blueprint $table) {
+            $table->foreign(['business_id'], 'fk_sucursal_empresa1')->references(['id'])->on('businesses')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->foreign(['town_id'], 'fk_sucursal_municipios1')->references(['id'])->on('towns')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->foreign(['administrator_id'], 'fk_sucursal_usuarios1')->references(['id'])->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
@@ -27,7 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('subsidiary', function (Blueprint $table) {
+        Schema::table('subsidiaries', function (Blueprint $table) {
             $table->dropForeign('fk_sucursal_empresa1');
             $table->dropForeign('fk_sucursal_municipios1');
             $table->dropForeign('fk_sucursal_usuarios1');

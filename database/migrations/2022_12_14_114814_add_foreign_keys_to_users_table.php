@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->foreign(['town_id'], 'fk_usuarios_municipios1')->references(['id'])->on('towns')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-            $table->foreign(['subsidiary_id'], 'fk_usuarios_sucursal1')->references(['id'])->on('subsidiary')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['subsidiary_id'], 'fk_usuarios_sucursal1')->references(['id'])->on('subsidiaries')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
     }
 

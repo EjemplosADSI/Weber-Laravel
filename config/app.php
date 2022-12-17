@@ -213,6 +213,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'ArtisanDev' => App\Helpers\ArtisanDev\HelpersFunctions::class,
     ])->toArray(),
 
 ];
