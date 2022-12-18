@@ -6,7 +6,6 @@ use App\Enums\UserDocumentType;
 use App\Enums\UserGender;
 use App\Enums\UserRole;
 use App\Enums\UserStatus;
-use App\Models\Subsidiary;
 use App\Models\Town;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -38,23 +37,13 @@ class UserSeeder extends Seeder
                 'town_id'           => Town::all()->random()->id,
                 'birth_date'        => fake()->dateTimeBetween('-10 years', '-1 month'),
                 'role'              => fake()->randomElement(UserRole::values()),
-                'subsidiary_id'     => Subsidiary::all()->random()->id ?? 1,
+                'subsidiary_id'     => User::whereName('Liceo Centro')->first()->id ?? null,
                 'status'            => fake()->randomElement(UserStatus::values()),
-                'remember_token'    => Str::random(10)
-
-
-
-                'name'              => 'Diego Ojeda',
-                'email'             => 'daom89@gmail.com',
-                'email_verified_at' => now(),
-                'password'          => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'gender'            => 'male',
-                'active'            => 1,
-                'remember_token'    => Str::random(10)
+                'remember_token'    => Str::random(10),
             ]
         ]);
 
         // Fake users
-        User::factory()->times(9)->create();
+        User::factory()->times(10)->create();
     }
 }

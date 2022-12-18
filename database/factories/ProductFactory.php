@@ -2,19 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Enums\UserDocumentType;
-use App\Enums\UserGender;
-use App\Enums\UserRole;
-use App\Enums\UserStatus;
-use App\Models\Subsidiary;
-use App\Models\Town;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
  */
-class UserFactory extends Factory
+class ProductFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -23,8 +16,20 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+
+//        $table->comment('Tabla de productos');
+//        $table->bigIncrements('id')->unique('id_product_UNIQUE');
+//        $table->string('name', 60)->unique()->index();
+//        $table->unsignedDecimal('price', 10, 0);
+//        $table->unsignedFloat('gain_percentage', 10, 2);
+//        $table->unsignedMediumInteger('stock');
+//        $table->enum('status', ProductStatus::values())->default(ProductStatus::Activo->value);
+//        $table->timestampsTz();
+//        $table->softDeletes();
+
+
         return [
-            'name'              => fake()->firstName(),
+            'name'              => fake()->nam(),
             'last_name'         => fake()->lastName(),
             'email'             => fake()->safeEmail(),
             'email_verified_at' => now(),
@@ -43,19 +48,5 @@ class UserFactory extends Factory
             'remember_token'    => Str::random(10),
             'created_at'        => now(),
         ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return static
-     */
-    public function unverified()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
     }
 }

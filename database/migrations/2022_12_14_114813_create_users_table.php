@@ -24,7 +24,7 @@ return new class extends Migration {
             $table->string('email', 90)->unique();
             $table->timestampTz('email_verified_at')->nullable();
             $table->string('password', 256)->nullable();
-            $table->string('photo', 45)->nullable()->default('default_user.jpg');
+            $table->string('photo', 200)->nullable()->default('default_user.jpg');
             $table->enum('gender', UserGender::values())->nullable()->default(UserGender::MASCULINO->value);
             $table->enum('document_type', UserDocumentType::values())->default(UserDocumentType::CC->value);
             $table->unsignedBigInteger('document')->unique('documento_UNIQUE')->index();
