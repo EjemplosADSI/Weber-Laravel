@@ -14,9 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_picture', function (Blueprint $table) {
+        Schema::create('product_pictures', function (Blueprint $table) {
             $table->comment('Tabla de imagenes de productos');
-            $table->bigIncrements('id')->unique('id_product_picture_UNIQUE');
+            $table->bigIncrements('id')->unique('id_product_pictures_UNIQUE');
             $table->unsignedBigInteger('picture_id')->index('fk_productos_has_fotos_fotos1_idx');
             $table->unsignedBigInteger('product_id')->index('fk_productos_has_fotos_productos1_idx');
             $table->enum('status', ProductPictureStatus::values())->default(ProductPictureStatus::Activo->value);
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_picture');
+        Schema::dropIfExists('product_pictures');
     }
 };
