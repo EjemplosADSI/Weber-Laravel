@@ -27,7 +27,7 @@ class SubsidiaryFactory extends Factory
             'administrator_id' => User::all()->random()->id ?? 1,
             'direction'        => fake()->address(),
             'town_id'          => Town::all()->random()->id,
-            'phone'            => fake()->phoneNumber(),
+            'phone'            => fake()->unique()->numberBetween(3_000_000_000, 4_000_000_000),
             'type'             => fake()->randomElement(SubsidiaryType::values()),
             'status'           => fake()->randomElement(SubsidiaryStatus::values()),
             'created_at'       => fake()->dateTimeBetween("-1 month", now()),

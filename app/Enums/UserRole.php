@@ -8,7 +8,7 @@ enum UserRole: string
 {
     use ValuesEnum;
 
-    case Administrador = 'Femenino';
+    case Administrador = 'Administrador';
     case Empleado = 'Empleado';
     case Cliente = 'Cliente';
     case Proveedor = 'Proveedor';

@@ -33,6 +33,6 @@ class SubsidiarySeeder extends Seeder
         ]);
 
         // Fake users
-        Business::factory()->times(20)->create();
+        Subsidiary::factory()->times(20)->create();
     }
 }

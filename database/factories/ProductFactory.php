@@ -23,7 +23,7 @@ class ProductFactory extends Factory
             'name'            => fake()->unique()->product(),
             'price'           => fake()->randomFloat(2, 1000, 10_000_000),
             'gain_percentage' => fake()->randomFloat(2, 10, 100),
-            'stock'           => fake()->numberBetween(0, 16_777_215), //Maximo medium int
+            'stock'           => fake()->numberBetween(0, 10_000),
             'status'          => fake()->randomElement(ProductStatus::values()),
             'created_at'      => now(),
         ];
