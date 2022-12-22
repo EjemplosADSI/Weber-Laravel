@@ -44,6 +44,6 @@ class UserSeeder extends Seeder
         ]);
 
         // Fake users
-        User::factory()->times(10)->create();
+        User::factory()->times(50)->create();
     }
 }

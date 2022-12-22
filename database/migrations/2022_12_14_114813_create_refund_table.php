@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,7 +12,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('returns', function (Blueprint $table) {
+        Schema::create('refunds', function (Blueprint $table) {
             $table->comment('Tabla de devoluciones');
             $table->bigIncrements('id')->unique('id_return_UNIQUE');
             $table->timestampTz('date')->useCurrent()->useCurrentOnUpdate();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('returns');
+        Schema::dropIfExists('refunds');
     }
 };
