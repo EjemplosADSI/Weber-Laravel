@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ColorSchemeController;
 use App\Http\Controllers\DarkModeController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',)->name('terms_user');
+//Route::get('/',)->name('terms_user');
 
 Route::get('/terms_user', function () {
     return view('site.terms_user');
@@ -27,10 +28,13 @@ Route::get('/terms_user', function () {
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 Route::get('color-scheme-switcher/{color_scheme}', [ColorSchemeController::class, 'switch'])->name('color-scheme-switcher');
 
+Route::resource('departament', DepartmentController::class)/*->only(['index', 'store'])*/ ->middleware(['auth', 'verified']);
+
 Route::middleware(['auth', 'verified'])->group(function () {
     //Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::controller(PageController::class)->group(function () {
-        Route::get('/home', 'dashboardOverview1')->name('dashboard-overview-1');
+        Route::get('/home', 'blank')->name('home');
+        Route::get('dashboard-overview-1-page', 'dashboardOverview1')->name('dashboard-overview-1');
         Route::get('dashboard-overview-2-page', 'dashboardOverview2')->name('dashboard-overview-2');
         Route::get('dashboard-overview-3-page', 'dashboardOverview3')->name('dashboard-overview-3');
         Route::get('dashboard-overview-4-page', 'dashboardOverview4')->name('dashboard-overview-4');
