@@ -1,5 +1,6 @@
 {
     "name": "daom89/weber",
+    "version": "0.0.1",
     "type": "project",
     "description": "Sistema de Inventarios.",
     "keywords": ["inventarios", "weber", "productos"],

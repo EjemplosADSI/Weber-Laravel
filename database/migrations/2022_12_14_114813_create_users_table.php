@@ -35,10 +35,9 @@ return new class extends Migration {
             $table->enum('role', UserRole::values())->default(UserRole::Cliente->value);
             $table->unsignedBigInteger('subsidiary_id')->nullable()->index('fk_usuarios_sucursal1_idx');
             $table->enum('status', UserStatus::values())->default(UserStatus::Activo->value);
-            $table->softDeletes();
             $table->rememberToken();
             $table->timestampsTz();
-
+            $table->softDeletesTz();
         });
     }
 

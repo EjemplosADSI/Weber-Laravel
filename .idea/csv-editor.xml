@@ -3,7 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\database\seeders\ExcelData\Departamentos.csv">
+        <entry key="\database\seeders\ExcelData\Departments.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -17,17 +17,17 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\database\seeders\ExcelData\Municipios.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\database\seeders\ExcelData\Products.csv">
           <value>
             <Attribute>
               <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\database\seeders\ExcelData\Towns.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
