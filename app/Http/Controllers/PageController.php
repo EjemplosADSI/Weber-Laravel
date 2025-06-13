@@ -2,14 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-
 class PageController extends Controller
 {
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function blank()
+    {
+        return view('pages/blank', [
+        ]);
+    }
+
+
+    /**
+     * Show specified view.
+     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function dashboardOverview1()
@@ -26,7 +37,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function dashboardOverview2()
@@ -37,7 +48,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function dashboardOverview3()
@@ -48,7 +59,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function dashboardOverview4()
@@ -59,7 +70,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function inbox()
@@ -70,7 +81,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function categories()
@@ -81,7 +92,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function addProduct()
@@ -92,7 +103,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function productList()
@@ -103,7 +114,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function productGrid()
@@ -114,7 +125,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function transactionList()
@@ -125,7 +136,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function transactionDetail()
@@ -136,7 +147,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function sellerList()
@@ -147,7 +158,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function sellerDetail()
@@ -158,7 +169,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function reviews()
@@ -169,7 +180,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function fileManager()
@@ -180,7 +191,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function pointOfSale()
@@ -191,7 +202,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function chat()
@@ -202,7 +213,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function post()
@@ -213,7 +224,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function calendar()
@@ -224,7 +235,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function crudDataList()
@@ -235,7 +246,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function crudForm()
@@ -246,7 +257,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function usersLayout1()
@@ -257,7 +268,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function usersLayout2()
@@ -268,7 +279,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function usersLayout3()
@@ -279,7 +290,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function profileOverview1()
@@ -290,7 +301,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function profileOverview2()
@@ -301,7 +312,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function profileOverview3()
@@ -312,7 +323,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wizardLayout1()
@@ -323,7 +334,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wizardLayout2()
@@ -334,7 +345,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wizardLayout3()
@@ -345,7 +356,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function blogLayout1()
@@ -356,7 +367,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function blogLayout2()
@@ -367,7 +378,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function blogLayout3()
@@ -378,7 +389,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function pricingLayout1()
@@ -389,7 +400,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function pricingLayout2()
@@ -400,7 +411,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function invoiceLayout1()
@@ -411,7 +422,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function invoiceLayout2()
@@ -422,7 +433,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function faqLayout1()
@@ -433,7 +444,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function faqLayout2()
@@ -444,7 +455,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function faqLayout3()
@@ -455,7 +466,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function login()
@@ -466,7 +477,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function register()
@@ -477,7 +488,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function errorPage()
@@ -488,7 +499,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function updateProfile()
@@ -499,7 +510,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function changePassword()
@@ -510,7 +521,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function regularTable()
@@ -521,7 +532,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function tabulator()
@@ -532,7 +543,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function modal()
@@ -543,7 +554,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function slideOver()
@@ -554,7 +565,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function notification()
@@ -565,7 +576,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function tab()
@@ -576,7 +587,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function accordion()
@@ -587,7 +598,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function button()
@@ -598,7 +609,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function alert()
@@ -609,7 +620,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function progressBar()
@@ -620,7 +631,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function tooltip()
@@ -631,7 +642,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function dropdown()
@@ -642,7 +653,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function typography()
@@ -653,7 +664,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function icon()
@@ -664,7 +675,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function loadingIcon()
@@ -675,7 +686,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function regularForm()
@@ -686,7 +697,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function datepicker()
@@ -697,7 +708,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function tomSelect()
@@ -708,7 +719,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function fileUpload()
@@ -719,7 +730,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wysiwygEditorClassic()
@@ -730,7 +741,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wysiwygEditorInline()
@@ -741,7 +752,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wysiwygEditorBalloon()
@@ -752,7 +763,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wysiwygEditorBalloonBlock()
@@ -763,7 +774,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function wysiwygEditorDocument()
@@ -774,7 +785,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function validation()
@@ -785,7 +796,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function chart()
@@ -796,7 +807,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function slider()
@@ -807,7 +818,7 @@ class PageController extends Controller
     /**
      * Show specified view.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function imageZoom()

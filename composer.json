@@ -2,12 +2,31 @@
     "name": "daom89/weber",
     "version": "0.0.1",
     "type": "project",
-    "description": "Sistema de Inventarios.",
-    "keywords": ["inventarios", "weber", "productos"],
+    "description": "Sistema de Inventarios en Laravel",
+    "keywords": [
+        "inventarios",
+        "weber",
+        "productos"
+    ],
+    "homepage": "https://google.com",
+    "time": "2022-10-28",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Diego Ojeda",
+            "email": "daom89@gmail.com",
+            "homepage": "http://www.sena.edu.co",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.1",
+        "ext-intl": "*",
         "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-xdebug": "*",
+        "ext-zip": "*",
+        "diglactic/laravel-breadcrumbs": "^8.0",
         "doctrine/dbal": "^3.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
@@ -15,8 +34,7 @@
         "laravel/tinker": "^2.7",
         "league/csv": "^9.8",
         "maatwebsite/excel": "^3.1",
-        "psr/simple-cache": "2.0",
-        "ext-http": "*"
+        "psr/simple-cache": "2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

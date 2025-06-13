@@ -1,5 +1,5 @@
-import xlsx from "xlsx";
-import { createIcons, icons } from "lucide";
+import * as xlsx from 'xlsx'
+import {createIcons, icons} from "lucide";
 import Tabulator from "tabulator-tables";
 
 (function () {
